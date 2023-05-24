@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="logo" onclick="window.location.href='index.html'">SUMGEN</div>
+            <div class="nav">
+              <a href="index.html">GPT4</a>
+              <a href="about.html">About</a>
+              <a href="contact.html" class="active">Contact</a>
+              <a href="summary.html">Testimonials</a>
+              <div class="center">
+                <a class="tip-us" href="tip.html"><button class="primary">Tip Us</button></a>
+              </div>
+            </div>
+            <div class="menu-icon" onclick="toggleMenu(this)">
+              <img src="hamburger-icon.png" alt="Menu" width="30" height="30">
+            </div>
+            <div class="close-icon" onclick="toggleMenu(this)">
+              <img src="close-icon.png" alt="Close" width="30" height="30">
+            </div>
+          </div>
+      </header>
+  <div class="container">
+    <h1>Contact Me</h1>
+    <form id="contact-form form-group">
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Your Email address</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Type your message here</label>
+        <textarea id="message" name="message" rows="10" cols="50" required></textarea>
+        </div>
+        
+      <button type="submit">Send Message</button>
+    </form>
+    <div id="success-message"></div>
+  </div>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <img src="logo.png" alt="Logo">
+      </div>
+      <div class="footer-column">
+        <ul>
+          <a href="https://avi.vzy.io" class="tab">Avi's portfolio</a>
+          <a href="https://docs.google.com/document/d/1X6t7uESW4KsIRv_kHDFUk6zatkvTUrT3eB-xd9BOF_Q/edit?usp=sharing" class="tab">Resume</a>
+          <a href="mailto:avioflagos@gmail.com" class="tab">Contact</a>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <ul class="social-icons">
+          <li><a href="https://www.linkedin.com/in/avioflagos/"><img src="IMGs\LinkedIn.svg" alt="linkedin"></a></li>
+          <li><a href="https://twitter.com/avioflagos"><img src="IMGs\twitter.svg" alt="Twitter"></a></li>
+          <li><a href="https://github.com/AviOfLagos"><img src="IMGs\Github.svg" alt="Github"></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+<script>
+    // Toggle Collapsible Menu
+  function toggleMenu(icon) {
+    const nav = document.querySelector('.nav');
+    const header = document.querySelector('.header');
+    const menuIcon = document.querySelector('.menu-icon');
+    const closeIcon = document.querySelector('.close-icon');
+
+    nav.classList.toggle('collapsible');
+    header.classList.toggle('show');
+    menuIcon.classList.toggle('closed');
+    closeIcon.classList.toggle('open');
+  }
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Send the form data to your server or perform other actions here
+    
+    // Display success message
+    document.getElementById("success-message").textContent = "Message sent successfully!";
+    });
+
+  </script>
+</html>

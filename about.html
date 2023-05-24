@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <div class="header">
+                <div class="logo" onclick="window.location.href='index.html'">SUMGEN</div>
+                <div class="nav">
+                <a href="index.html">GPT4</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="summary.html">Testimonials</a>
+                <div class="center">
+                    <a class="tip-us" href="tip.html"><button class="primary">Tip Us</button></a>
+                </div>
+                </div>
+                <div class="menu-icon" onclick="toggleMenu(this)">
+                <img src="hamburger-icon.png" alt="Menu" width="30" height="30">
+                </div>
+                <div class="close-icon" onclick="toggleMenu(this)">
+                <img src="close-icon.png" alt="Close" width="30" height="30">
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <h1>About</h1>
+            <div class="content">
+              <h2>Project Name</h2>
+              <p>This project is called "Summary Generator." It is an AI-powered tool that automatically generates summaries of text documents or articles.</p>
+              
+              <h2>Project Context</h2>
+              <p>In today's fast-paced world, it can be challenging to keep up with the vast amount of information available. Reading lengthy documents or articles may consume a significant amount of time. The Summary Generator aims to solve this problem by providing concise and accurate summaries of text content, allowing users to quickly grasp the main points without going through the entire document.</p>
+              
+              <h2>Technical Details</h2>
+              <p>The Summary Generator is built using a combination of technologies, including:</p>
+              <ul>
+                <li>Python: The backend of the application is developed using Python programming language.</li>
+                <li>Flask: Flask, a lightweight web framework, is used to handle the server-side logic and routing.</li>
+                <li>OpenAI GPT-3: The AI-powered language model GPT-3, developed by OpenAI, is utilized for generating the summaries.</li>
+                <li>HTML, CSS, JavaScript: The frontend of the application is built using HTML, CSS, and JavaScript for a user-friendly interface.</li>
+              </ul>
+              
+              <h2>Usage</h2>
+              <p>To generate a summary, simply enter the text or upload a document through the provided form on the homepage. The AI model will process the input and generate a concise summary that captures the main points of the content. Users can also explore the sample summaries available on the site to get an idea of the generated summaries' quality.</p>
+              
+              <h2>Feedback</h2>
+              <p>We value your feedback! If you have any suggestions, encounter any issues, or have questions regarding the Summary Generator, please feel free to contact us through the provided contact form. We appreciate your input as it helps us improve the application.</p>
+            </div>
+          </div>
+          <footer>
+            <div class="footer-container">
+              <div class="footer-column">
+                <img src="logo.png" alt="Logo">
+              </div>
+              <div class="footer-column">
+                <ul>
+                  <a href="https://avi.vzy.io" class="tab">Avi's portfolio</a>
+                  <a href="https://docs.google.com/document/d/1X6t7uESW4KsIRv_kHDFUk6zatkvTUrT3eB-xd9BOF_Q/edit?usp=sharing" class="tab">Resume</a>
+                  <a href="mailto:avioflagos@gmail.com" class="tab">Contact</a>
+                </ul>
+              </div>
+              <div class="footer-column">
+                <ul class="social-icons">
+                  <li><a href="https://www.linkedin.com/in/avioflagos/"><img src="IMGs\LinkedIn.svg" alt="linkedin"></a></li>
+                  <li><a href="https://twitter.com/avioflagos"><img src="IMGs\twitter.svg" alt="Twitter"></a></li>
+                  <li><a href="https://github.com/AviOfLagos"><img src="IMGs\Github.svg" alt="Github"></a></li>
+                </ul>
+              </div>
+            </div>
+          </footer>
+</body>
+    <script>
+    // Toggle Collapsible Menu
+    function toggleMenu(icon) {
+        const nav = document.querySelector('.nav');
+        const header = document.querySelector('.header');
+        const menuIcon = document.querySelector('.menu-icon');
+        const closeIcon = document.querySelector('.close-icon');
+    
+        nav.classList.toggle('collapsible');
+        header.classList.toggle('show');
+        menuIcon.classList.toggle('closed');
+        closeIcon.classList.toggle('open');
+    }
+    </script>
+</html>

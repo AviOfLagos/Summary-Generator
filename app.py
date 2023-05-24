@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session
 import openai
 
 app = Flask(__name__)
@@ -8,13 +8,26 @@ openai.api_key = 'YOUR_OPENAI_API_KEY'
 @app.route('/')
 @app.route('/index.html')
 def index():
-    summary_count = 100  # Example summary count
-    user_count = 50  # Example user count
-    return render_template('index.html')
+     # Increment the summary count
+    session['summary_count'] = session.get('summary_count', 0) + 1
+
+    # Increment the user count
+    session['user_count'] = session.get('user_count', 0) + 1
+
+    # Render the template and pass the data as context variables
+    return render_template('index.html', summary_count=session['summary_count'], user_count=session['user_count'])
 
 @app.route('/index_.html')
 def index_():
-    return render_template('index_.html')
+     # Increment the summary count
+    session['summary_count'] = session.get('summary_count', 0) + 1
+
+    # Increment the user count
+    session['user_count'] = session.get('user_count', 0) + 1
+
+    # Render the template and pass the data as context variables
+    return render_template('index_.html', summary_count=session['summary_count'], user_count=session['user_count'])
+
 
 @app.route('/generate-summary', methods=['POST'])
 def generate_summary():

@@ -5,13 +5,49 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+  <div class="header">
+    <div class="logo" onclick="window.location.href='index.html'">SUMGEN</div>
+    <div class="nav">
+        <a href="index.html">GPT4</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="summary.html">Testimonials</a>
+        <div class="center">
+        <a class="tip-us" href="tip.html"><button class="primary">Tip Us</button></a>
+        </div>
+    </div>
+    <div class="menu-icon closed" onclick="toggleMenu(this)">
+        <img src="hamburger-icon.png" alt="Menu" width="30" height="30">
+    </div>
+    <div class="close-icon" onclick="toggleMenu(this)">
+        <img src="close-icon.png" alt="Close" width="30" height="30">
+    </div>  
+    </div>
   <div class="container">
     <h1>Summary Generated</h1>
+    <!-- Check if user's summary is available -->
+    {% if user_summary %}
+    <div class="user-summary">
+        <h2>Your Summary</h2>
+        <p>{{ summary }}</p>
+    </div>
+      {% else %}
+          <div class="sample-summary">
+              <h2>Sample Summary</h2>
+              <p>This is a sample summary to give you an idea of what to expect.</p>
+          </div>
+      {% endif %}
     <p>{{ summary }}</p>
   </div>
   <div class="container">
     <div class="comments">
       <h2>Comments</h2>
+      <ul>
+        <li>Comment 1</li>
+        <li>Comment 2</li>
+        <li>Comment 3</li>
+        <!-- Add more dummy comments here -->
+    </ul>
       <ul>
         {% for comment in comments %}
         <li>{{ comment }}</li>
@@ -28,5 +64,45 @@
       </form>
     </div>
   </div>
+  <div class="container">
+    <p>Summaries Created: {{ session['summary_count'] }}</p>
+    <p>Users Visited: {{ session['user_count'] }}</p>
+    <p>Please note, these session variables are stored on the server side, so if the server restarts or the session expires, the counts will be reset.(No database linked)</p>
+</div>
+<footer>
+  <div class="footer-container">
+    <div class="footer-column">
+      <img src="logo.png" alt="Logo">
+    </div>
+    <div class="footer-column">
+      <ul>
+        <a href="https://avi.vzy.io" class="tab">Avi's portfolio</a>
+        <a href="https://docs.google.com/document/d/1X6t7uESW4KsIRv_kHDFUk6zatkvTUrT3eB-xd9BOF_Q/edit?usp=sharing" class="tab">Resume</a>
+        <a href="mailto:avioflagos@gmail.com" class="tab">Contact</a>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <ul class="social-icons">
+        <li><a href="https://www.linkedin.com/in/avioflagos/"><img src="IMGs\LinkedIn.svg" alt="linkedin"></a></li>
+        <li><a href="https://twitter.com/avioflagos"><img src="IMGs\twitter.svg" alt="Twitter"></a></li>
+        <li><a href="https://github.com/AviOfLagos"><img src="IMGs\Github.svg" alt="Github"></a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
 </body>
+<script>
+  // Toggle Collapsible Menu
+  function toggleMenu(icon) {
+    const nav = document.querySelector('.nav');
+    const header = document.querySelector('.header');
+    const menuIcon = document.querySelector('.menu-icon');
+    const closeIcon = document.querySelector('.close-icon');
+
+    nav.classList.toggle('collapsible');
+    header.classList.toggle('show');
+    menuIcon.classList.toggle('closed');
+    closeIcon.classList.toggle('open');
+  }
+</script>
 </html>
