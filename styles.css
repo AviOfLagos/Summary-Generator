@@ -4,7 +4,131 @@ body {
     margin: 0;
     padding: 0;
   }
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+  }
   
+  .header .logo {
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .header .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .header .nav a {
+    color: #000;
+    text-decoration: none;
+    padding: 10px;
+  }
+  
+  .header .nav a.active {
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  .header .nav a:hover {
+    color: #007bff;
+  }
+  
+  .header .nav .tip-us {
+    margin-left: 15px;
+  }
+  
+  .header .menu-icon,
+  .header .close-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* Collapsible Menu Styles */
+  .header .nav.collapsible {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 16px;
+  }
+  
+  .header .nav.collapsible.show {
+    display: flex;
+  }
+  
+  /* Primary Button Styles */
+  .header .nav .tip-us button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Responsive Styles */
+  @media only screen and (max-width: 500px) {
+    .header .logo {
+      font-size: 20px;
+    }
+    
+    .header .nav {
+      display: none;
+    }
+    
+    .header .menu-icon,
+    .header .close-icon {
+      display: inline-block;
+    }
+    
+    .header .nav.collapsible {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 16px;
+      padding-right: 16px;
+      margin: 16px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 5px;
+    }
+    
+    .header .nav.collapsible a {
+      margin: 5px 0;
+    }
+    
+    .header .nav.collapsible.show {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    
+    .header .nav.collapsible.show a {
+      color: #000;
+    }
+  }
+
+
+
+
+
+
   .container {
     max-width: 600px;
     margin: 50px auto;
@@ -47,7 +171,7 @@ body {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
     height: 100px;
   }
   
@@ -61,6 +185,15 @@ body {
     border-radius: 5px;
     cursor: pointer;
   }
+  .Checkbox {
+    padding: 10px;
+    color: #6b5454;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
   button[type="button"] {
     display: block;
     width: 100%;
@@ -71,3 +204,16 @@ body {
     border-radius: 5px;
     cursor: pointer;
   }
+
+  .actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.actions button[type="submit"] {
+    width: 68%;
+}
+
+.actions button.back-button {
+    width: 30%;
+}

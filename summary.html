@@ -9,5 +9,24 @@
     <h1>Summary Generated</h1>
     <p>{{ summary }}</p>
   </div>
+  <div class="container">
+    <div class="comments">
+      <h2>Comments</h2>
+      <ul>
+        {% for comment in comments %}
+        <li>{{ comment }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="add-comment">
+      <h2>Add Your Comment</h2>
+      <form action="/comments" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required><br>
+        <input type="email" name="email" placeholder="Your Email" required><br>
+        <textarea name="comment" placeholder="Your Comment" required></textarea><br>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
 </body>
 </html>

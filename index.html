@@ -7,6 +7,26 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header class="header">
+        <div class="logo" onclick="window.location.href='index.html';">
+          SUMGEN
+        </div>
+        <div class="nav">
+          <a href="index.html">GPT4</a>
+          <a href="about.html">About</a>
+          <a href="testimonials.html">Testimonials</a>
+          <div class="tip-us">
+            <button type="button">Tip Us</button>
+          </div>
+        </div>
+        <div class="menu-icon" onclick="toggleNav()">
+          &#9776;
+        </div>
+        <div class="close-icon" onclick="toggleNav()">
+          &times;
+        </div>
+      </header>
+
     <div class="container">
         <h1>Generate Summary(Bard)</h1>
         <a href="index_.html"> Use GPT instead</a>
@@ -39,16 +59,38 @@
         <label for="platforms">Platforms</label>
         <div class="form-group">
             <label for="platform">Select Platforms</label>
-            <input type="checkbox" name="platform" value="LinkedIn"> LinkedIn<br>
+            <input type="checkbox" name="platform" class="Checkbox" value="LinkedIn"> LinkedIn<br>
             <input type="checkbox" name="platform" value="Twitter"> Twitter<br>
             <input type="checkbox" name="platform" value="Resume"> Resume<br>
           </div>
       </div>
             <div class="actions">
-            <button type="submit">Generate Summary</button>
-            <button type="button" class="back-button">Back</button>
+                <button type="button" class="back-button">Back</button>
+                <button type="submit">Generate Summary</button>
             </div>
         </form>
+        <div class="statistics">
+            <p>Summaries Created: {{ summary_count }}</p>
+            <p>Users Visited: {{ user_count }}</p>
+        </div>
     </div>
 </body>
+<script>
+    // Collapsible menu functionality
+    const menuIcon = document.querySelector('.menu-icon');
+    const closeIcon = document.querySelector('.close-icon');
+    const nav = document.querySelector('.nav');
+
+    menuIcon.addEventListener('click', () => {
+      nav.classList.add('collapsible', 'show');
+      menuIcon.style.display = 'none';
+      closeIcon.style.display = 'block';
+    });
+
+    closeIcon.addEventListener('click', () => {
+      nav.classList.remove('show');
+      menuIcon.style.display = 'block';
+      closeIcon.style.display = 'none';
+    });
+  </script>
 </html>
