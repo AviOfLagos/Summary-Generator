@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Summary Generator</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Summary Generator(GPT4)</h1>
+    <a href="index.html"> Use Bard instead</a>
+    <form method="POST" action="/generate-summary">
+      <div class="form-group">
+        <label for="jobTitle">Job Title</label>
+        <input type="text" id="jobTitle" name="jobTitle" required>
+      </div>
+      <div class="form-group">
+        <label for="company">Company</label>
+        <input type="text" id="company" name="company" required>
+      </div>
+      <div class="form-group">
+        <label for="skills">Skills and Experience</label>
+        <textarea id="skills" name="skills" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="goals">Goals</label>
+        <textarea id="goals" name="goals" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="platforms">Platforms</label>
+        <select id="platforms" name="platforms" multiple required>
+          <option value="LinkedIn">LinkedIn</option>
+          <option value="Twitter">Twitter</option>
+          <option value="Resume">Resume</option>
+        </select>
+      </div>
+      <div class="actions">
+        <button type="submit">Generate Summary</button>
+        <button type="button" class="back-button">Back</button>
+        </div>    </form>
+  </div>
+</body>
+</html>
